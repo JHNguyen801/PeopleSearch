@@ -19,7 +19,7 @@ namespace PeopleSearch.Models
         public string Address { get; set; }
         [Required(ErrorMessage = "Please provide your Age")]
         [Display(Name = "Age")]
-        public int Age { get; set; }
+        public double Age { get; set; }
         public string Interest { get; set; }
     }
 }

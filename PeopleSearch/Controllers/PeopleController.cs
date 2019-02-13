@@ -16,7 +16,7 @@ namespace PeopleSearch.Controllers
         public PeopleController(PeopleSearchContext context)
         {
             _context = context;
-        }
+        }   
 
         // GET: People
         public async Task<IActionResult>Index(string searchString)

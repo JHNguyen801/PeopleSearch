@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PeopleSearch.Controllers;
+using PeopleSearch.Models;
 using System.Threading.Tasks;
 
 namespace PeopleSearchTest
@@ -11,17 +12,16 @@ namespace PeopleSearchTest
         [TestMethod]
         public void HomeIndexTests()
         {
-            HomeController controller = new HomeController();
-            ViewResult result = controller.Index() as ViewResult;
+            PeopleController controller = new PeopleController(PeopleSearchContext context);
+            ViewResult result = controller.View() as ViewResult;
             Assert.IsNotNull(result);
         }
         [TestMethod]
-        public void ContactResult()
+        public void HomeCreateTests()
         {
-            HomeController controller = new HomeController();
-
-            ViewResult result = controller.Contact() as ViewResult;
+            PeopleController controller = new PeopleController(PeopleSearchContext context);
+            ViewResult result = controller.Create() as ViewResult;
             Assert.IsNotNull(result);
-        }
+        }      
     }
 }
